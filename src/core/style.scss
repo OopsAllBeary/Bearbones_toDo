@@ -1,0 +1,12 @@
+//  CORE
+@use './styles/fonts.scss';
+@use './styles/global.scss';
+@use './styles/typography.scss';
+
+// ROUTES
+@use "../routes/Home/Home.scss";
+
+// COMPONENTS
+
+
+@use "../components/Navigation/Navigation.scss";

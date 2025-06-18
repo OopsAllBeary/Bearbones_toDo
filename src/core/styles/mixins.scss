@@ -1,0 +1,12 @@
+@mixin fullwidth {
+    margin-left: -50vw;
+    padding-left: 50vw;
+    margin-right: -50vw;
+    padding-right: 50vw;
+    width: calc(100vw + 100%);
+}
+
+@function toRem($value) {
+    $remValue: calc($value / 16) + rem; 
+    @return $remValue;
+}

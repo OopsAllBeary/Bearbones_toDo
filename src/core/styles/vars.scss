@@ -1,0 +1,51 @@
+@use './mixins.scss' as *;
+
+$small: toRem(375);
+$medium: toRem(768);
+$large: toRem(1080);
+$xlarge: toRem(1440);
+
+$nav-height: toRem(88);
+
+$primary-color: #000000;
+$secondary-color: #FFFFFF;
+//#868686, #363636, #111111, #A0A0A0, #9E9E9E, #F5F5F5, #D0BCFF, #A2FC9B, #FE6B6B 
+
+$Primary: 'Inter';
+$Secondary: 'Roboto';
+
+$h1Font: $Primary;
+$h1Size: 1.875rem;
+$h1Weight: 300;
+
+$h2Font: $Primary;
+$h2Size: 1.5rem;
+$h2Weight: 500;
+
+$h3Font: $Primary;
+$h3Size: 1.25rem;
+$h3Weight: 500;
+
+$h4Font: $Primary;
+$h4Size: 1.125rem;
+$h4Weight: 400;
+
+$h5Font: $Primary;
+$h5Size: 1rem;
+$h5Weight: 400;
+
+$h6Font: $Primary;
+$h6Size: 0.875rem;
+$h6Weight: 400;
+
+$pFont: $Secondary;
+$pSize: 1rem;
+$pWeight: 400;
+
+$captionFont: $Secondary;
+$captionSize: 0.75rem;
+$captionWeight: 400;
+
+$linkFont: $Primary;
+$linkSize: 1rem;
+$linkWeight: 400;
