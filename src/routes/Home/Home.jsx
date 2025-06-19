@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
+import Todo from '../../components/Todo/Todo.jsx'
+
 
 export default function Home() {
-  const [selectedIndex, setSelectedIndex] = useState(-1);
-
-  const handleListItemClick = (event, index) => {
-    setSelectedIndex(index);
-  };
 
   const taskList = [
     { id: 1, text: 'Test 1', completed: false },
@@ -59,22 +56,12 @@ export default function Home() {
         role="list"
         className="todoList"
         aria-labelledby="listHeading">
-        <li className="todo">
-          <div className="todoContent">
-            <input id="todo-0" type="checkbox" defaultChecked />
-            <label className="todoLabel" htmlFor="todo-0">
-              Eat
-            </label>
-          </div>
-          <div className="btn-group">
-            <button type="button" className="btn">
-              Edit <span className="visuallyHidden">Eat</span>
-            </button>
-            <button type="button" className="btn btn__danger">
-              Delete <span className="visuallyHidden">Eat</span>
-            </button>
-          </div>
-        </li>
+        {taskList.map((task) => (
+          <Todo
+            key={task.id}
+            task={task}
+          />
+        ))}
       </ul>
     </main>
   )
