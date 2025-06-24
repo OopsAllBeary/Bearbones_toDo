@@ -1,15 +1,40 @@
 import React, { useEffect, useState } from 'react'
 
-import Todo from '../../components/Todo/Todo.jsx'
+import TodoList from '../../components/TodoList/TodoList.jsx'
+import { useLoaderData } from 'react-router'
 
 
 export default function Home() {
+  const loaderData = useLoaderData()
+  const [tasks, setTasks] = useState([
+  ])
 
-  const taskList = [
-    { id: 1, text: 'Test 1', completed: false },
-    { id: 2, text: 'Test 2', completed: false },
-    { id: 3, text: 'Test 3', completed: false }
-  ]
+  useEffect(() => {
+    if (loaderData && loaderData.tasks) {
+      _setTasks(loaderData.tasks)
+    } else {
+      const storedTasks = JSON.parse(localStorage.getItem('tasks')) || []
+      _setTasks(storedTasks)
+    }
+  }, [loaderData])
+
+  useEffect(() => {
+    const currentTasks = JSON.parse(localStorage.getItem('tasks')) || []
+    if (!tasks || tasks.length === 0 || JSON.stringify(tasks) === JSON.stringify(currentTasks)) {
+      return
+    }
+    console.log('Saving tasks to localStorage:', tasks)
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
+
+
+  const _setTasks = (newTasks) => {
+    console.log('Updating tasks:', newTasks)
+    setTasks(newTasks)
+    
+  }
+
+  
 
   return (
     <main className="home">
@@ -17,52 +42,10 @@ export default function Home() {
         <h1>Task Manager</h1>
 
       </header>
-      <form>
-        <h2 className="labelWrapper">
-          <label htmlFor="newTodoInput" className="label">
-            Add new task
-          </label>
-        </h2>
-        <input
-          type="text"
-          id="newTodoInput"
-          className="input"
-          name="text"
-          autoComplete="off"
+      <TodoList
+        tasks={tasks}
+        updateTasks={_setTasks}
         />
-        <button type="submit" className="btn_add">
-          Add
-        </button>
-      </form>
-      <div className="filters">
-        <button type="button" className="btn btn_toggle" aria-pressed="true">
-          <span className="visuallyHidden">Show </span>
-          <span>all</span>
-          <span className="visuallyHidden"> tasks</span>
-        </button>
-        <button type="button" className="btn btn_toggle" aria-pressed="false">
-          <span className="visuallyHidden">Show </span>
-          <span>Active</span>
-          <span className="visuallyHidden"> tasks</span>
-        </button>
-        <button type="button" className="btn btn_toggle" aria-pressed="false">
-          <span className="visuallyHidden">Show </span>
-          <span>Completed</span>
-          <span className="visuallyHidden"> tasks</span>
-        </button>
-      </div>
-
-      <ul
-        role="list"
-        className="todoList"
-        aria-labelledby="listHeading">
-        {taskList.map((task) => (
-          <Todo
-            key={task.id}
-            task={task}
-          />
-        ))}
-      </ul>
     </main>
   )
 }

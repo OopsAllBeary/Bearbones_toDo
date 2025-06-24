@@ -15,6 +15,12 @@ const Routes = () => {
         {
           index: true,
           Component: Home,
+          loader: async () => {
+            console.log('Loading tasks from localStorage...')
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || []
+            console.log('Loaded tasks:', tasks)
+            return { tasks }
+          },
         },
         // NAV ROUTER
       ]

@@ -4,16 +4,16 @@ const Todo = (props) => {
     return (
         <li key={props.task.id} className="todo">
             <div className="todoContent">
-                <input id={`todo-${props.task.id}`} type="checkbox" defaultChecked={props.task.completed} />
+                <input id={`todo-${props.task.id}`} type="checkbox" defaultChecked={props.task.completed} onChange={() => props.completeTask(props.task.id)}/>
                 <label className="todoLabel" htmlFor={`todo-${props.task.id}`}>
                     {props.task.text}
                 </label>
             </div>
-            <div className="btn-group">
-                <button type="button" className="btn">
+            <div className="btnGroup">
+                <button type="button" className="btn" aria-label={`Edit task: ${props.task.text}`} onClick={() => props.editTask(props.task.id)}>
                     Edit <span className="visuallyHidden">{props.task.text}</span>
                 </button>
-                <button type="button" className="btn btn__danger">
+                <button type="button" className="btn btn__danger" aria-label={`Delete task: ${props.task.text}`} onClick={() => props.deleteTask(props.task.id)}>
                     Delete <span className="visuallyHidden">{props.task.text}</span>
                 </button>
             </div>

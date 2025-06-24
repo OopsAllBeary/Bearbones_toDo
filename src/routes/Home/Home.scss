@@ -1,14 +1,11 @@
 @use '../../core/styles/functions.scss' as *;
 
 .home {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-
-    // height: calc(100vh - $nav-height);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
     width: 100vw;
     overflow: hidden;
     padding-top: $nav-height;
-    // background: url('../assets/images/bg21.png') no-repeat center center/cover;
-
 }
