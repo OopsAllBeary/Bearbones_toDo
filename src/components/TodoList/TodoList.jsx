@@ -70,7 +70,7 @@ const [filter, setFilter] = useState('active') // 'active', 'completed', 'all'
     <div className="todoListWrapper">
     <form onSubmit={handleFormSubmit} className="form">
         <h2 className="labelWrapper">
-          <label htmlFor="newTodoInput" className="label">
+          <label htmlFor="newTodoInput" className="visuallyHidden">
             Add new task
           </label>
         </h2>
@@ -81,6 +81,7 @@ const [filter, setFilter] = useState('active') // 'active', 'completed', 'all'
           name="text"
           autoComplete="off"
           onChange={handleInputChange}
+          placeholder="Add a new task"
         />
         <button type="submit" className="btn_add">
           <span id="addButton">Add</span>
@@ -88,17 +89,17 @@ const [filter, setFilter] = useState('active') // 'active', 'completed', 'all'
         </button>
       </form>
       <div className="filters">
-        <button type="button" className="btn" aria-pressed={filter === 'all'} onClick={() => setFilter('all')}>
+        <button type="button" className={filter === 'all' ? 'btn active' : 'btn'} aria-pressed={filter === 'all'} onClick={() => setFilter('all')}>
           <span className="visuallyHidden">Show </span>
           <span>all</span>
           <span className="visuallyHidden"> tasks</span>
         </button>
-        <button type="button" className="btn" aria-pressed={filter === 'active'} onClick={() => setFilter('active')}>
+        <button type="button" className={filter === 'active' ? 'btn active' : 'btn'} aria-pressed={filter === 'active'} onClick={() => setFilter('active')}>
           <span className="visuallyHidden">Show </span>
           <span>Active</span>
           <span className="visuallyHidden"> tasks</span>
         </button>
-        <button type="button" className="btn" aria-pressed={filter === 'completed'} onClick={() => setFilter('completed')}>
+        <button type="button" className={filter === 'completed' ? 'btn active' : 'btn'} aria-pressed={filter === 'completed'} onClick={() => setFilter('completed')}>
           <span className="visuallyHidden">Show </span>
           <span>Completed</span>
           <span className="visuallyHidden"> tasks</span>

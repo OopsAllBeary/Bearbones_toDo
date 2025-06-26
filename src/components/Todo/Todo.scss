@@ -1,0 +1,55 @@
+.todo {
+    width: 100%;
+    display: flex;
+    border: 1px solid white;
+    min-height: 4rem;
+    align-items: stretch;
+    justify-content: space-between;
+
+    &.todo--completed {
+        background-color: #232323;
+        border: 1px solid green;
+        
+        .todoContent {
+            text-decoration: line-through;
+            color: green;
+        }
+    }
+    
+
+    .todoContent {
+        width: 100%;
+        height: auto;
+        padding-left: 1rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+        font-size: 1.25rem;
+    }
+
+    .btnGroup {
+        display: flex;
+        gap: 0;
+        height: auto;
+        align-items: stretch;
+        justify-content: center;
+        width: 7rem;
+
+        .btn {
+            width: 3rem;
+            height: auto;
+            border: none;
+            color: black;
+            background-color: white;
+            cursor: pointer;
+            overflow: hidden;
+
+            &.btn__danger {
+                background-color: #FE6B6B;
+                color: white;
+                width: 4rem;
+            }
+        }
+    }
+}

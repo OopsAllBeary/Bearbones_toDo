@@ -2,9 +2,9 @@ import React from 'react';
 
 const Todo = (props) => {
     return (
-        <li key={props.task.id} className="todo">
-            <div className="todoContent">
-                <input id={`todo-${props.task.id}`} type="checkbox" defaultChecked={props.task.completed} onChange={() => props.completeTask(props.task.id)}/>
+        <li key={props.task.id} className={props.task.completed ? "todo todo--completed" : "todo"}>
+            <div className="todoContent" onClick={() => props.completeTask(props.task.id)}>
+                <input id={`todo-${props.task.id}`} className="visuallyHidden" type="checkbox" defaultChecked={props.task.completed} onChange={() => props.completeTask(props.task.id)}/>
                 <label className="todoLabel" htmlFor={`todo-${props.task.id}`}>
                     {props.task.text}
                 </label>

@@ -1,0 +1,79 @@
+.todoListWrapper {
+    width: 100%;
+    margin-bottom: 5rem;
+   #newTodoInput  {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        color: white;
+        background-color: transparent;
+        font-size: 1.25rem;
+
+        
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .btn_add {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #6200ea;
+        color: white;
+        background-image: linear-gradient(90deg, #ab00ab, #6200ea, black);
+        background-size: 200% 100%;
+        background-position: 0% 50%;
+        transition: background-position 0.4s ease, padding 0.2s ease, margin-bottom 0.2s ease;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 0.25rem;
+        margin-bottom: 1.25rem;
+
+        &:hover {
+            background-position: 100% 50%;
+            padding: 1.25rem;
+            margin-bottom: 0;
+        }
+    }
+
+    .filters {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+
+        button {
+            padding: 0.5rem 1rem;
+            background-color: black;
+                color: white;
+                border: white 1px solid;
+            border-radius: 0.5rem;
+            
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &.active {
+                
+                background-color: white;
+            color: black;
+            border: black 1px solid;
+            }
+
+            &:hover {
+                background-color: #3700b3;
+                color: white;
+                border: white 1px solid;
+            }
+        }
+    }
+}
