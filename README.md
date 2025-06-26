@@ -17,6 +17,7 @@ Clean up the code to be more consistent, i switch between camel case and dashes 
 <li>
 Clean up dependencies that aren't needed. I run webpack often enough that I have a configuration i like, and in pulling that in to kick this off, i added a few packages I don't actually need for this project. This doesn't matter unless we're trying to save milliseconds in compile time.
 </li>
+</ol>
 
 ## How to run
 
