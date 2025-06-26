@@ -21,4 +21,4 @@ Clean up dependencies that aren't needed. I run webpack often enough that I have
 
 ## How to run
 
-This is a pretty straight forward webpack dev server. Simply clone the repository, then run 'npm i' in the directory to install dependencies. Running 'npm run start' will start the dev server with hot loading enabled, allowing you to edit in real time. Running 'npm run build' will build the site for production, placing everything needed in the dist/ folder.
+This is a pretty straight forward webpack dev server. Simply clone the repository, then run 'npm i' in the directory to install dependencies. Running 'npm run start' will start the dev server with hot loading enabled, allowing you to edit in real time. It should also automatically open the site in a window, but if it doesn't, just navigate to localhost:8080. Running 'npm run build' will build the site for production, placing everything needed in the dist/ folder.
